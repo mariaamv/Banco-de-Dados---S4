@@ -10,12 +10,12 @@ create table Professor (
 create table Disciplina (
 	id_disciplina int primary key not null,
     nome_disciplina varchar(45) not null,
-    carga_horaria datetime not null
+    carga_horaria int not null
 );
 
 create table horarios (
 	id_horario int primary key not null,
-    dia_semana date not null
+    dia_semana varchar(10) not null
 );
 
 create table LaboratorioHorarios (
@@ -25,7 +25,7 @@ create table LaboratorioHorarios (
 
 create table laboratorio (
 	id_lab int primary key not null,
-    nome_lab int not null
+    nome_lab varchar(45) not null
 );
 
 create table AlunoDisciplina (
@@ -44,8 +44,6 @@ create table Aula (
 	Horarios_id_horario int not null references Horarios(id_horario)
 );
 
-drop table ProfessorDisciplina;
-drop table DisciplinaTurma;
-drop table Turma;
-drop table DisciplinaHorarios;
-
+drop table Disciplina;
+drop table horarios;
+drop table laboratorio;
